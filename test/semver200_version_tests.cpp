@@ -31,6 +31,11 @@ using namespace version;
 
 using v = Semver200_version;
 
+#pragma push_macro("major")
+#pragma push_macro("minor")
+#undef major
+#undef minor
+
 /// Check parsing logic by performing roundtrip - parse string to version object, then
 /// generate string from that object and check if it's identical to source.
 #define CHECK_RT(SRC) { \

@@ -28,6 +28,11 @@ SOFTWARE.
 #include <string>
 #include <vector>
 
+#pragma push_macro("major")
+#pragma push_macro("minor")
+#undef major
+#undef minor
+
 namespace version {
 
 	/// Any error in parsing or validation of version string will result in Parse_error exception being thrown.
@@ -216,3 +221,6 @@ namespace version {
 }
 
 #include "version.inl"
+
+#pragma pop_macro("major")
+#pragma pop_macro("minor")
